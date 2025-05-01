@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import LiveTracking from '../components/LiveTracking'
 
+
 const CaptainRiding = () => {
 
     const [ finishRidePanel, setFinishRidePanel ] = useState(false)
@@ -30,8 +31,12 @@ const CaptainRiding = () => {
     return (
         <div className='h-screen relative flex flex-col justify-end'>
 
-            <div className='fixed p-6 top-0 flex items-center justify-between w-screen'>
-                <img className='w-16' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
+            <div className='fixed p-6 top-0 flex items-center justify-between w-screen'>        
+                 <div className='h-screen fixed w-screen top-0 z-[-1]'>
+                <LiveTracking />
+            </div>
+
+                <img className='w-16' src="doordash-text.svg" alt="" />
                 <Link to='/captain-home' className=' h-10 w-10 bg-white flex items-center justify-center rounded-full'>
                     <i className="text-lg font-medium ri-logout-box-r-line"></i>
                 </Link>
@@ -54,10 +59,7 @@ const CaptainRiding = () => {
                     setFinishRidePanel={setFinishRidePanel} />
             </div>
 
-            <div className='h-screen fixed w-screen top-0 z-[-1]'>
-                <LiveTracking />
-            </div>
-
+   
         </div>
     )
 }
